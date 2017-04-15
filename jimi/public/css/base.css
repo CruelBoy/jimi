@@ -1,0 +1,78 @@
+/*--------------------全局样式------------------*/
+body,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea{padding:0;margin:0;}
+body{font-family: Arial,"Microsoft YaHei","宋体"}
+ul,ol,li{list-style:none;}
+table { border-collapse:collapse; border-spacing:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight: normal;}
+a{text-decoration:none;cursor: pointer;}
+img,input{border:none;}
+i{font-style:normal;}
+strong{font-weight: normal;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix::after{content: "";display: block;visibility: hidden;clear: both;}
+.clearfix{*zoom:1;}
+.content{margin:0 auto; width: 1210px;}
+.clear{clear:both;}
+
+/*top*/
+.top{height: 30px;background:#f1f1f1;line-height: 30px;font-size:12px;padding-left: 10px;}
+.top .address i{position: relative;display: block;width: 12px;height: 7px;float: left;top:14px;margin-left: 8px;float: left;}
+.top .address:hover s{line-height: 11px;height: 5px;}
+.top .address:hover span{color: #c81623;}
+.address{font-size:12px;color: #666;}
+.top .address i s{text-decoration: none;font-size: 22px;position: absolute;display: block;width: 12px;height: 7px;overflow: hidden;text-align: center;left: 0;top: 0;line-height: 1px;}
+.subnav{width: 866px;}
+
+.login{color: #c81623;float: left;}
+.login:hover{}
+.subnav ul{float: left;}
+.subnav ul li{float: left;position: relative;}
+.subnav ul li strong{display: block;position: absolute;width: 11px;height: 16px;left: 11px;top:7px;
+	background-image:url(../images/jd2015img.png);background-repeat: no-repeat;background-position: -2px -2px;}
+.subnav ul li:hover strong{background-position: -2px -27px;}	
+.subnav ul li a{color:#666;padding: 0 10px;float: left;}
+.subnav ul li i{position: relative;display: block;width: 12px;height: 7px;float: right;top:14px;float: left;margin-right: 10px;}
+.subnav ul li i s{text-decoration: none;font-size: 22px;position: absolute;display: block;width: 12px;height: 7px;overflow: hidden;text-align: center;left: 0;top: 0;line-height: 1px;}
+.subnav span{float: left;display: inline-block;color: #666;}
+.subnav .sub-icon2 {padding-left: 15px;}
+.subnav ul li:hover a{color: #c81623;}
+.subnav ul li:hover s{line-height: 11px;height: 5px;}
+
+/*在线客服*/
+.sub-server:hover .server{ display:block;}
+.subnav .sub-server .server li a:hover{ color: #c81623;}
+.server{ position:absolute;top:30px;left:0; display:none;}
+.subnav .sub-server .server li a{color:#666;}
+
+
+
+/*header*/
+.header{height: 75px;padding-top: 25px;}
+
+.search{width: 538px;height: 64px;}
+.sea{font-size:12px;color:#999;width: 450px;height: 33px;line-height: 33px;padding-left: 4px;float: left;outline: none;
+	border-left: 1px solid #b61d1d;border-top: 1px solid #b61d1d;border-bottom: 1px solid #b61d1d;}
+.btn{width: 82px;height: 35px;background: #b61d1d;line-height: 35px;text-align: center;font-size: 16px;color: #FFF;float: left;}
+.logo{padding-right: 95px;}
+.search a{margin-right: 12px;color: #666;font-size: 12px;line-height: 29px;}
+.search a:hover{color: #b61d1d;}
+.search .active{color: #b61d1d;}
+.buycar{width: 96px;height: 34px;border:1px solid #dfdfdf;line-height: 34px;padding-left: 43px;position: relative;}
+.buycar i{height:14px;padding:2px;display: block;position:absolute;left: 104px;top:-8px;border-radius: 6px 6px 6px 0;
+	background: #c81623;font-size: 12px;color: #FFF;line-height: 14px;text-align: center; }
+.buycar a{font-size: 12px;color: #666;}
+.buycar a span{color: #666;padding-left: 21px;}
+.buy-bg{width: 16px;height: 13px;position: absolute;left:19px;top:10px;background-repeat: no-repeat;background-position: -1px -59px;
+	background-image: url(../images/jd2015img.png);}
+
+
+/*nav*/
+.nav{border-bottom: 1px solid #b1191a;height: 44px;line-height: 44px;}
+.classification{width: 200px;height: 44px;background: #b1191a;padding-left: 10px;font-size: 15px;color: #FFF;}
+.nav ul{padding-left: 20px;float: left;}
+.nav ul li{margin-right: 40px;float: left;}
+.nav ul li a{font-size: 15px;color: #333;}
+.nav ul li a:hover{color: #b61d1d;}
+
+.ui-menu-item .ui-menu-item-wrapper:hover{background: #C81623 !important; border: none !important;}

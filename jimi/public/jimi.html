@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+        $(function(){
+
+            var socket = io();
+//            事件委托,给每一个a绑定事件
+            $(".dialog-text").on("click","a.link",function () {
+                //alert($(this).text());
+                var onmessage = $(this).text();
+                var onmsg = {
+                    type : "onclikmsg",
+                    msg : onmessage
+                }
+                socket.send(onmsg);
+            });
+
+//            监听socket服务器发来的消息
+            socket.on("message",function(data){
+                var msgtype = data.type;
+
+                if(msgtype == "quelist"){
+                    var html1 = "";
+                    html1 += "<p>"+data.id+"</p>"+'<div class="serlist"><p>' +data.message[0]+"</p><ul>"
+                    for (var i=1; i<data.message.length;i++){
+                        html1+= '<li><a class="link" href="##">'+data.message[i]+"</a></li>"
+                    };
+                    console.log(html1);
+                    //$(".ID1").get(0).innerHTML=html;
+                    $(html1).appendTo(".ID1")
+                    $(".dialog-text").scrollTop($(".dialog-text").prop("scrollHeight"));
+                };
+
+                if(msgtype == "answer"){
+                    var html2 ="";
+                    html2 += '<div class="person2"><p>'+data.id+'</p><div class="text">'+data.result+"</div></div>"
+                    $(html2).appendTo(".dialog-text")
+                    $(".dialog-text").scrollTop($(".dialog-text").prop("scrollHeight"));
+                };
+
+                if(msgtype == "other"){
+                    var num = Math.floor(Math.random()*data.content.length)
+                    var html4 ="";
+                    html4 += '<div class="person2"><p>可爱的咚咚</p><div class="text">'+data.content[num]+"</div></div>"
+                    $(html4).appendTo(".dialog-text")
+                    $(".dialog-text").scrollTop($(".dialog-text").prop("scrollHeight"));
+                };
+
+            });
+
+//            输入发送消息
+            $(".sendmsg").on("click",function(){
+                var inText = $(".input-text").val();
+                var inmsg = {
+                    type : "active",
+                    msg : inText
+                };
+//                判读输入内容是否为空
+                if(inText.length==0){
+                    alert("请输入正确的内容");
+                }else{
+                    socket.send(inmsg);
+                    var html3 = "";
+                    html3 += '<div class="person1"><p>喜欢购物的小哥哥</p><div class="text">'+inText+"</div></div>"
+                    $(html3).appendTo(".dialog-text");
+                    $(".dialog-text").scrollTop($(".dialog-text").prop("scrollHeight"));
+                    $(".input-text").val(null);
+                };
+
+
+            });
+
+//            输入框响应键盘事件
+            $('.input-text').keydown(function (e) {
+                if (e.keyCode == 13) {  // 如果是按下的Enter键
+                    $(".sendmsg").click();
+                }
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="cont-left fl">
+        <div class="id-img">
+            <h1>京东咚咚</h1>
+            <dl class="clearfix">
+                <dt></dt>
+                <dd>
+                    <h2>喜欢购物的小哥哥</h2>
+                    <p><span></span><strong></strong></p>
+                </dd>
+            </dl>
+            <div class="search">
+                <input class="btn" type="button" >
+                <input class="classtext" type="text" value="" placeholder="请输入搜索内容...">
+            </div>
+        </div>
+        <div class="list-log">
+            <ul>
+                <li>
+                    <dl>
+                        <dt>JD</dt>
+                        <dd>
+                            <p class="p1">京东客服</p>
+                            <p class="p2">有什么问题...<i>16:48</i></p>
+                        </dd>
+                        <span>官方</span>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cont-right fr">
+        <div class="top">
+            <span>官方</span><h2>京东客服</h2><strong></strong>
+        </div>
+        <div class="bottom">
+            <div class="dialog">
+                <div class="dialog-text">
+                    <div class="ID1">
+<!--                        <p>京东客服</p>
+                        <div class="serlist">
+                            <p>请选择您要咨询的业务</p>
+                            <ul>
+                                <li><a href="##">请选择咨询订单</a></li>
+                                <li><a href="##">请选择咨询商品</a></li>
+                                <li><a href="##">返修退换货查询</a></li>
+                                <li><a href="##">账户和财务咨询</a></li>
+                                <li><a href="##">发票和少件咨询</a></li>
+                                <li><a href="##">意见与建议反馈</a></li>
+                                <li><a href="##">一起帮-您的购物助手</a></li>
+                                <li><a href="##">配送服务</a></li>
+                                <li><a href="##">虚拟商品</a></li>
+                                <li><a href="##">乡村推广员招募</a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+<!--                    <div class="person1">
+                        <p>二狗子</p>
+                        <div class="text">您好，你是一个机器人吗？</div>
+                    </div>
+                    <div class="person2">
+                        <p>机器猫</p>
+                        <div class="text">我不是的！</div>
+                    </div>-->
+                </div>
+                <div class="input-box">
+                    <textarea class="input-text"></textarea>
+                    <span class="sendmsg">发送</span>
+                </div>
+            </div>
+            <div class="meau">
+                <div class="tablist">
+                    <a class="active" href="##">我的订单</a>
+                    <a href="##">常见问题</a>
+                </div>
+                <div class="tabcontent">
+                    <ul>
+                        <li>
+                            <p class="mobiemeau">订单号：4990455227100</p>
+                            <div class="img">
+                                <dl>
+                                    <dt>
+                                        <p><img src="images/JIMI/img_03.jpg" alt=""><strong>北京移动手机话费充值50元 快充</strong></p>
+                                    </dt>
+                                    <dd><p>订单金额：49.95<span>2017-03-04</span></p></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mobiemeau">订单号：4990455227100</p>
+                            <div class="img">
+                                <dl>
+                                    <dt>
+                                    <p><img src="images/JIMI/img_03.jpg" alt=""><strong>北京移动手机话费充值50元 快充</strong></p>
+                                    </dt>
+                                    <dd><p>订单金额：49.95<span>2017-03-04</span></p></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mobiemeau">订单号：4990455227100</p>
+                            <div class="img">
+                                <dl>
+                                    <dt>
+                                    <p><img src="images/JIMI/img_03.jpg" alt=""><strong>北京移动手机话费充值50元 快充</strong></p>
+                                    </dt>
+                                    <dd><p>订单金额：49.95<span>2017-03-04</span></p></dd>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

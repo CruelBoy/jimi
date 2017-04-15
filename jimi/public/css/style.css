@@ -1,0 +1,92 @@
+/*-------------全局样式---------------*/
+body,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,textarea{padding:0;margin:0;}
+body{font-family: Arial,"Microsoft YaHei","宋体"}
+ul,ol,li{list-style:none;}
+table { border-collapse:collapse; border-spacing:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight: normal;}
+a{text-decoration:none;cursor: pointer;}
+img,input{border:none;}
+i{font-style:normal;}
+strong{font-weight: normal;}
+.clearfix::after{content:"";display: block;clear: both;visibility: hidden}
+.clearfix{zoom:1;}
+.fl{float:left;}
+.fr{float:right;}
+.content{margin:0 auto; width: 1200px;}
+.clear{clear:both;}
+
+
+.content{ width: 1200px; height: 570px; position:absolute; left:50%; top:50%; margin-left:-600px; margin-top:-285px;}
+.cont-left{ width: 220px; height:570px;}
+.cont-right{ width: 979px; height:570px; border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;   }
+.cont-left .id-img{ height: 135px; background: #e45050;}
+.cont-left .list-log{ height:435px; background: #373e48;}
+
+.id-img h1{ height: 25px; line-height: 25px; font-size: 14px; color: #a22523; padding-left: 10px; font-weight: bold;}
+.id-img dl{ padding-top: 5px; padding-left: 10px;padding-bottom: 8px;}
+.id-img dt{ width: 53px; height:53px; background:url("../images/JIMI/id.png") no-repeat center;float:left;}
+.id-img dd{float: left; margin-left:7px;}
+.id-img dd p{ padding-top:9px;}
+.id-img dd h2{ height: 23px; line-height:23px; color: #ffffff; font-weight: bold;}
+.id-img dd span{ height: 16px; width: 17px; background: url("../images/JIMI/icon1_03.jpg") no-repeat center; float: left; display: block; margin-right: 4px;}
+.id-img dd strong{ width: 51px; height: 16px; background: url("../images/JIMI/icon2_03.jpg") no-repeat center; float: left; display: block;}
+.id-img .search{width: 200px; height: 28px; line-height: 28px; background: #ffffff; border-radius: 15px;margin-left: 10px;}
+.search .classtext{ height: 25px; line-height: 25px; outline: none; width: 140px;padding-left: 10px; color: #ccc;}
+.search .btn{ width: 13px; height: 12px; background: url("../images/JIMI/btn_03.jpg") no-repeat center; margin-left: 10px; cursor: pointer;}
+
+.list-log li{ height: 50px; background: #2f363e; padding-top: 10px; padding-left: 10px;}
+.list-log li{position: relative;}
+.list-log li dt{ width: 40px; height: 40px; border-radius: 50%; background: #e50a1e; text-align: center; line-height: 40px; font-weight: bold; color: #FFFFFF;
+    float: left;}
+.list-log li dd{ float: left;}
+.list-log li dd span{ display: block;}
+.list-log li span{ width: 30px; height: 16px; background: #ff5a64; text-align: center; line-height: 16px; font-size: 12px; color: #FFFFFF; position: absolute;
+    bottom:8px; left: 15px;}
+.list-log .p1{ font-size: 12px; color: #FFFFFF; text-indent: 1em;}
+.list-log .p2{ color: #7a818b;font-size: 12px;text-indent: 1em; padding-top: 10px;line-height: 10px;width: 160px;}
+.list-log .p2 i{ float: right;}
+
+
+.cont-right .top{ height: 35px;padding-top:15px;padding-left: 10px; border-bottom: 1px solid #e0e0e0;}
+.top span{ height:16px; width:30px; color: #ffffff; background: #ef5f5e; font-size: 12px; margin-right: 5px; display: block;  float: left; text-align: center; line-height: 16px;
+    border-radius:3px; margin-top: 4px;}
+.top strong{ width:8px; height: 8px; border-radius: 50%; background: #69e66e;  display: inline-block;  float: left; margin-top: 7px; margin-left: 5px;}
+.top h2{ float: left;font-size: 16px;  color: #29282d;}
+
+
+.dialog{ width:637px; height:519px;border-bottom: 1px solid #e1e1e1; border-right:1px solid #e1e1e1; float: left; }
+.dialog .dialog-text{height: 379px;border-bottom: 1px solid #e1e1e1; padding-top: 15px;overflow-y: scroll; padding-bottom: 15px;}
+.input-box{ width: 625px; height: 111px; position: relative;}
+.dialog .input-text{ width:605px; height: 50px; resize: none; padding: 10px; line-height: 24px; border: none; outline: none; }
+.sendmsg{ display: block; width: 75px; height: 35px; line-height: 35px; text-align: center; color: #FFF; background: #999999;
+    position: absolute; right: 0; bottom: 10px; cursor: pointer;}
+
+
+.ID1{ margin-left: 18px;}
+.ID1 p{ font-size: 12px; color: #c4c4c4; height: 21px; line-height: 21px;}
+.ID1 .serlist p{ height: 30px; line-height: 35px; color: #2c2825;}
+.serlist{ width: 187px; height: 333px; background: #e8e8e8; border-radius: 6px; padding-left: 11px;}
+.serlist ul li{ height: 30px; line-height: 30px; padding-left: 25px; background: url("../images/JIMI/list_icon_03.jpg") no-repeat 5px center;}
+.serlist ul li a{ font-size: 12px; color:#2c4c73;}
+
+.person1{margin-right: 18px; width: 450px; float: right; margin-top: 5px;}
+.person1 p{font-size: 12px; color: #c4c4c4; height: 21px; line-height: 21px;float: right;}
+.person1 .text{ padding: 10px; background: #e8e8e8;float: right; border-radius: 6px; font-size: 12px; color:#2f363e; clear: both;line-height: 20px; }
+
+.person2{margin-left: 18px; width: 450px; float: left; margin-top: 5px;}
+.person2 p{font-size: 12px; color: #c4c4c4; height: 21px; line-height: 21px;float: left;}
+.person2 .text{ padding: 10px; background: #e8e8e8;float: left; border-radius: 6px; font-size: 12px; color:#2f363e; clear: both;line-height: 20px; }
+
+
+.meau{ float: left; width: 339px;}
+.tablist{ height: 36px; border-bottom: 1px solid #e1e1e1; background: #eeeeee;}
+.tablist a{ width: 85px; height: 33px; line-height: 33px; display: block; float: left; font-size: 14px; color: #2d2926; text-align: center; }
+.tablist .active{ border-top:2px solid #e86172; color: #cc5771;}
+.tabcontent li{ height: 147px;border-bottom: 1px solid #e4e3e1; }
+.img{ padding-top: 10px; padding-left: 10px;}
+.img dt p img{float: left; margin-right: 10px;}
+.img dt{overflow: hidden;}
+.img dd p{font-size: 14px; color: #212a15; height: 30px; line-height: 30px; width: 305px; padding-top: 5px;}
+.img dd p span{ float: right;}
+.img p strong{ font-size: 14px; color: #212a15;}
+.tabcontent .mobiemeau{ height: 38px; border-bottom: 1px solid #e4e3e1; width: 313px; line-height: 38px; font-size: 14px; color: #2d2926; margin-left: 10px;}
