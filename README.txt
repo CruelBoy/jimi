@@ -1,5 +1,5 @@
 
-基于node.js搭建的简易后台服务器实现仿京东的双通信的JIMI智能回复系统</br>
+基于node.js搭建的简易后台服务器实现仿京东的双通信的JIMI智能回复系统
 使用模块：http，express，socket.io
 
 问题列表：
